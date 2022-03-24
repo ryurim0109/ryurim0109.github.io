@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.c6b51ae1.css",
-    "main.js": "/static/js/main.44089f8e.js",
+    "main.css": "/static/css/main.5a828508.css",
+    "main.js": "/static/js/main.e1cd594d.js",
     "static/js/787.cf53e342.chunk.js": "/static/js/787.cf53e342.chunk.js",
-    "static/media/NanumGothicCoding-Regular.ttf": "/static/media/NanumGothicCoding-Regular.9fd9323b064549a4f804.ttf",
-    "static/media/NanumGothicCoding-Bold.ttf": "/static/media/NanumGothicCoding-Bold.547bf7903b7143c1d63b.ttf",
+    "static/media/NotoSansKR-Regular.otf": "/static/media/NotoSansKR-Regular.e1aa54c04a18648e6468.otf",
+    "static/media/Gugi-Regular.ttf": "/static/media/Gugi-Regular.e4e242ff3ba08f9fe398.ttf",
     "static/media/FredokaOne-Regular.ttf": "/static/media/FredokaOne-Regular.4aea26dd6637dfac0fac.ttf",
     "index.html": "/index.html",
-    "main.c6b51ae1.css.map": "/static/css/main.c6b51ae1.css.map",
-    "main.44089f8e.js.map": "/static/js/main.44089f8e.js.map",
+    "main.5a828508.css.map": "/static/css/main.5a828508.css.map",
+    "main.e1cd594d.js.map": "/static/js/main.e1cd594d.js.map",
     "787.cf53e342.chunk.js.map": "/static/js/787.cf53e342.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6b51ae1.css",
-    "static/js/main.44089f8e.js"
+    "static/css/main.5a828508.css",
+    "static/js/main.e1cd594d.js"
   ]
 }
