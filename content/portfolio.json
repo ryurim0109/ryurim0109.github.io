@@ -1,0 +1,79 @@
+{
+  "profile": {
+    "name": "김유림",
+    "handle": "ryurim0109",
+    "role": "풀스택 개발자",
+    "github": "https://github.com/ryurim0109",
+    "intro": "작은 픽셀 하나부터, 직접 만지고 경험할 수 있는 웹을 만듭니다.",
+    "about": "안녕하세요, 풀스택 개발자 김유림입니다. 화면에서 서버, 데이터베이스까지 연결하며 아이디어를 직접 사용할 수 있는 웹으로 만듭니다. 픽셀 월드를 꾸미는 ryu-deco를 만들고, 이곳에는 직접 구현한 것과 그 과정에서의 선택을 차곡차곡 담습니다.",
+    "interests": [
+      "인터랙티브 웹",
+      "프론트엔드와 서버의 연결",
+      "데이터를 다루는 웹 서비스"
+    ],
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Canvas API",
+      "Zustand"
+    ],
+    "portfolioStack": ["Next.js", "Tailwind CSS", "NestJS", "PostgreSQL"]
+  },
+  "projects": [
+    {
+      "slug": "ryu-deco",
+      "name": "ryu-deco",
+      "tagline": "Decorate your GitHub, pixel by pixel.",
+      "category": "PIXEL WORLD EDITOR",
+      "description": "개발자 소개와 기술 스택을 픽셀 월드로 꾸미고, 직접 그린 캐릭터와 애니메이션을 GitHub 프로필 README용 PNG·GIF로 내보내는 웹 에디터.",
+      "service": "https://ryurim0109.github.io/ryu-deco/",
+      "source": "https://github.com/ryurim0109/ryu-deco",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Zustand",
+        "Canvas",
+        "gifenc"
+      ],
+      "features": [
+        "실시간 Canvas 편집",
+        "배경 4종과 장식 배치",
+        "16×16·32×32 픽셀 그리기",
+        "프레임 애니메이션 편집",
+        "PNG·GIF 내보내기",
+        "브라우저 자동 저장"
+      ],
+      "contributions": {
+        "aiAssisted": [],
+        "handsOn": []
+      },
+      "decisions": [
+        {
+          "number": "01",
+          "title": "미리보기와 내보내기를 같은 그림으로",
+          "problem": "에디터에서 본 장면과 다운로드한 이미지가 다르면, 사용자는 결과물을 예측하기 어렵습니다.",
+          "implementation": "Canvas의 공통 픽셀 렌더러로 미리보기, PNG, GIF 프레임을 그립니다. 선택 테두리는 편집 화면에서만 보여주고 내보낼 때는 제외합니다.",
+          "reason": "Canvas를 사용해 픽셀 단위의 배치와 이미지 출력을 하나의 렌더링 경로에서 처리합니다. GIF는 gifenc로 프레임을 인코딩합니다."
+        },
+        {
+          "number": "02",
+          "title": "작은 그림이 움직이는 캐릭터가 되도록",
+          "problem": "기본 캐릭터를 고르는 데서 나아가, 사용자가 자기만의 캐릭터와 움직임을 만들 수 있어야 합니다.",
+          "implementation": "16×16·32×32 그리드, 연필과 지우개, 프레임 추가·복제·삭제를 제공합니다. 최대 8프레임을 편집하고, 그리드 크기를 바꿀 때는 nearest-neighbor 방식으로 픽셀을 변환합니다.",
+          "reason": "픽셀 데이터를 직접 관리해 확대해도 경계가 흐려지지 않게 합니다. 같은 그림을 여러 번 배치해도 원본 수정이 사본에 반영됩니다."
+        },
+        {
+          "number": "03",
+          "title": "브라우저를 닫아도 이어지는 작업",
+          "problem": "장면을 꾸미는 중 새로고침하거나 창을 닫아도 편집 내용을 다시 불러올 수 있어야 합니다.",
+          "implementation": "Zustand로 편집 상태를 관리하고 localStorage에 자동 저장합니다. 배경, 효과, 출력 형식과 직접 그린 캐릭터도 저장하며 실행 취소·다시 실행을 지원합니다.",
+          "reason": "별도 로그인 없이 브라우저에서 바로 만들고 이어서 편집할 수 있습니다. 상태 관리와 픽셀 렌더링, 내보내기 코드를 분리했습니다."
+        }
+      ]
+    }
+  ],
+  "posts": []
+}

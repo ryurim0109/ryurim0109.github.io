@@ -1,0 +1,41 @@
+{
+  "name": "ryurim-village",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "node scripts/serve-static.mjs",
+    "typecheck": "next typegen && tsc --noEmit && npm run typecheck --workspace server",
+    "build:server": "npm run build --workspace server",
+    "dev:server": "npm run dev --workspace server",
+    "db:seed": "npm run db:seed --workspace server",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:e2e": "playwright test",
+    "test:api": "node --env-file-if-exists=.env scripts/test-api.mjs"
+  },
+  "dependencies": {
+    "@fontsource/press-start-2p": "^5.2.0",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "prettier": "^3.6.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

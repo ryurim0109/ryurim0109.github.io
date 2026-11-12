@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+server/dist
+package-lock.json
+static
+public/static
+public/legacy
+index.html
+asset-manifest.json
+manifest.json
+*.tsbuildinfo
+test-results
+playwright-report
