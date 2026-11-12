@@ -31,15 +31,15 @@
 
 ## 실제 DB 통합 검사 범위
 
-현재 환경에 PostgreSQL 실행 파일과 Docker가 없어 실제 DB 연결·초기화·API 통합 테스트는 로컬에서 실행하지 못했습니다. 테스트를 통과했다고 주장하지 않습니다.
+현재 환경에 PostgreSQL 실행 파일과 Docker가 없어 DB 통합 테스트는 로컬에서 실행하지 않았습니다. GitHub Actions의 [실행 43162177412](https://github.com/ryurim0109/ryurim0109.github.io/actions/runs/43162177412)에서 PostgreSQL 17을 사용하는 `api` 작업과 정적 사이트 `build` 작업이 모두 성공한 것을 확인했습니다.
 
-`.github/workflows/pages.yml`의 `api` 작업은 PostgreSQL 17 서비스 컨테이너에서 실제 DB로 검증하도록 구성했습니다. 해당 작업은 아직 원격 실행하지 않았습니다. 로컬에서는 README의 DB 실행 절차 후 `npm run test:api`로 같은 검사를 실행할 수 있습니다.
+로컬에서는 [개발 안내](development.md)의 DB 실행 절차 후 `npm run test:api`로 같은 검사를 실행할 수 있습니다.
 
 ## 원격 배포
 
-- 공개 GitHub API의 저장소 조회는 HTTP 404를 반환했습니다. 이것만으로 삭제·비공개 여부를 구분할 수 없습니다.
-- 현재 Git 환경에서 비대화형 GitHub 자격 증명을 얻지 못해 저장소 visibility와 현재 Pages source 설정은 확인하지 못했습니다.
-- 공개 전환·Pages 설정 변경·원격 푸시·워크플로 실행은 하지 않았습니다.
+- 인증된 GitHub API로 저장소가 **공개(public)** 상태인 것을 확인했습니다. 저장소 공개 여부는 변경하지 않았습니다.
+- 기존 실행의 배포 단계는 Pages가 활성화되지 않아 실패했습니다. 사용자의 배포 요청에 따라 Pages를 `build_type: workflow`로 활성화했습니다.
+- 배포 대상은 `https://ryurim0109.github.io/`입니다. 최신 변경사항을 푸시해 배포를 진행합니다.
 - GitHub Pages용 빌드 결과는 `out/`입니다. 실제 대상은 `https://ryurim0109.github.io/`이며, 별도 프로젝트 `/ryu-deco/`와 구분합니다.
 - 저장소 소유자가 Pages source를 GitHub Actions로 설정하고 main에 푸시하거나 워크플로를 수동 실행하면 검사 후 배포합니다. 비공개 저장소의 공개 전환은 명시적 승인 없이 수행하지 않습니다.
 
